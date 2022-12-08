@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+       
+    </style>
+</head>
+<body>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+        @font-face {
+      font-family: kc;
+      src: url(fonts/KeepCalm-Medium.ttf);
+    }
+
+    @font-face {
+      font-family: lc;
+      src: url(fonts/Louis\ George\ Cafe.ttf);
+    }
+
+    .nav-item {
+      font-size: 16px;
+      margin-left: 10px;
+      font-weight: 800;
+      background-color: white;
+    }
+
+    .nav-link {
+      font-family: lc;
+      display: inline-block;
+      position: relative;
+    }
+
+
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color:
+        #000000;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+
+    }
+
+    .nav-link:hover:before {
+
+      transform: scaleX(1);
+      transform-origin: bottom left;
+
+    }
+.dropdown-menu{
+
+  border-radius: 0px;
+  font-family: lc;
+  color: black;
+}
+.dropdown-item{
+  font-weight: 800;
+  color: black;
+
+}
+.dropdown-item:hover{
+
+background-color: black;
+color: white;
+transition: .5s;
+
+}
+        .contactus{
+            position: relative;
+            width: 100%;
+            padding: 40px 100px;
+        }
+        .contactus .title{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2cm;
+        }
+        .contactus .title h1{
+            font-size: 70px;
+            -webkit-text-stroke-width: 2px;
+        }
+        .box{
+            position: relative;
+        }
+        .form{
+            grid-area: form;
+        }
+        .info{
+            grid-area: info;
+        }
+        .map{
+            grid-area: map;
+        }
+        .contact{
+            padding: 40px;
+            background: #fff;
+           
+        }
+        .box{
+            position: relative;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            grid-template-rows: 5fr 4fr;
+            grid-template-areas: 
+            "form info"
+            "form map";
+            grid-gap: 20px;
+        }
+        .contact h3{
+            color: #000;
+            font-weight: 500;
+            font-size: 1.4em;
+            margin-bottom: 10px;
+        }
+        /* form */
+        .formbox{
+            position: relative;
+            width: 100%;
+        }
+        .formbox .row50{
+            display: flex;
+            gap: 20px;
+        }
+        .inputbox{
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+            width: 50%;
+        }
+        .formbox .row100 .inputbox{
+            width: 100%;
+        }
+        .inputbox span{
+            color: black;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+        .inputbox input{
+            padding: 10px;
+            font-size: 1.1em;
+            outline: none;
+            border: 1px solid #333;
+        }
+        .inputbox textarea{
+            padding: 10px;
+            font-size: 1.1em;
+            outline: none;
+            border: 1px solid #333;
+            resize: none;
+            min-height: 220px;
+            margin-bottom: 10px;
+        }
+        .inputbox input[type="submit"]{
+            color: black;
+            border: none;
+            font-size: 1.1em;
+            max-width: 120px;
+            font-weight: 500;
+            cursor: pointer;
+            padding: 14px 15px;
+        }
+       
+        .btn-2{
+            height: 40px;
+      width: 400px;
+      background-color: black;
+      color: white;
+      border: none;
+      margin-top: 40px;
+      font-family: kc;
+            
+        }
+        .btn-2:hover {
+
+background-color: grey;
+color: #fff;
+transition: 1s;
+}
+
+        
+
+       .fa fa-star{
+        margin: 8px;
+       color: gold;
+       }
+       .icons-1{
+        font-size: 40px;
+   
+       }
+           /* footer starts */
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.footer-section {
+  background: #151414;
+  position: relative;
+  font-family: kc;
+  background-color: white;
+}
+
+.footer-cta {
+  border-top: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  font-family: kc;
+}
+
+.single-cta i {
+  color:  rgb(255, 174, 0);
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+  margin-left: 30px;
+}
+
+.cta-text {
+
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.cta-text h4 {
+ 
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  font-family: kc;
+  color: black;
+}
+
+.cta-text span {
+  color: #757575;
+  font-size: 13px;
+  color: #000;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+
+.footer-logo {
+  margin-bottom: 30px;
+  font-size: 40px;
+  font-weight: 500;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.footer-logo img {
+  height: 50px;
+    max-width: 330px;
+    margin-left: 66px;
+}
+
+.footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #7e7e7e;
+  line-height: 28px;
+}
+
+.footer-social-icon span {
+  color: black;
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  text-align: center;
+  font-family: kc;
+}
+
+.footer-social-icon a {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 15px;
+}
+
+.footer-social-icon i {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  margin-left: 65px;
+}
+
+.facebook-bg {
+  background: #3B5998;
+}
+
+.twitter-bg {
+  background: #55ACEE;
+}
+
+.google-bg {
+  background: #DD4B39;
+}
+
+.footer-widget-heading h3 {
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background:  rgb(241, 187, 69);
+}
+
+.footer-widget ul li {
+  display: inline-block;
+  width: 50%;
+  margin-bottom: 12px;
+}
+
+.footer-widget ul li a:hover {
+  color:  rgb(255, 174, 0) ;
+}
+
+.footer-widget ul li a {
+  color: #878787;
+  text-transform: capitalize;
+  line-height: 35px;
+}
+
+.subscribe-form {
+  position: relative;
+  overflow: hidden;
+}
+
+.subscribe-form input {
+  width: 100%;
+  padding: 14px 28px;
+  border:none;
+  color: black;
+  outline: none;
+  border-bottom: 2px solid black;
+}
+
+.subscribe-form button {
+  position: absolute;
+  right: 0;
+  color:  rgb(0, 0, 0);
+  padding: 13px 20px;
+  border: none;
+  border-bottom: 2px solid black;
+  top: 0;
+}
+
+.subscribe-form button i {
+  color: rgb(0, 0, 0);
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+
+.copyright-area {
+  text-align: center;
+  background: #ffffff;
+}
+
+.copyright-text p {
+  text-align: center;
+  margin-left:70px;
+  font-size: 15px;
+  color: #000000;
+  font-family: lc;
+}
+
+.copyright-text p a {
+  text-align: center;
+  color:white;
+ 
+}
+
+.footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.footer-menu li:hover a {
+  color:white;
+}
+
+.footer-menu li a {
+  font-size: 14px;
+  color: white;
+}
+
+/* footer ends */
+
+        </style>
+        <body>
+            <nav class="navbar navbar-expand-lg" style="background-color: white;">
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                  aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <a class="navbar-brand" href="#" style="font-family: kc;">
+                  <img src="texhwizimages/thrift.png" alt="">
+                </a>
+          
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav" style="margin-left: 130px;">
+                    <li class="nav-item active">
+                      <a style="color: black;" class="nav-link mx-3" href="home.html">Home <span class="sr-only">(current)</span></a>
+                    </li>
+          
+                    <li class="nav-item dropdown  mx-3">
+                      <a style="color: black;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Products
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="category.html">Men</a>
+                        <a class="dropdown-item" href="category.html">Women</a>
+          
+                      </div>
+                    </li>
+                    <li class="nav-item  mx-3">
+                      <a style="color: black;" class="nav-link" href="#cont-us">Contact Us</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                      <a style="color: black;" class="nav-link" href="#abt1">About Us</a>
+                    </li>
+                    <li class="nav-item mx-3">
+                      <a style="color: black;" class="nav-link" href="#head1">Feedback</a>
+                    </li>
+          
+                  </ul>
+          
+                </div>
+          
+                
+              </nav>
+         <section class="container m-5">
+           
+            <div class="row">
+                <div class="col-lg-6 col-md-6 col-sm-12 ">
+        
+         <img src="" alt=""  id="img1" height="530px" width="500px" >
+                    <div class="row100">
+                        
+                    </div>
+                </div>
+                <div style="background: #fff"  class="col-lg-6 col-md-6 col-sm-12 pro-det ">
+                    <h1 style="font-family: kc; font-size: 35px;">Product Name: <span id="pname"></span></h1>
+                    <div>
+                        <h2 style="font-family: lc;">Price:$<span id="price"></span></h2>
+                       <h2 style="font-family: lc;"> Rating:
+                       
+                       </h2> 
+                 </div>
+                 <div>
+                    <h2 style="font-family: lc;">Description:</h2>
+                    <p style="text-align:justify;font-family: lc;" id="desc"></div>
+                 <div class="inputbox">
+                    <button type="button" class="btn-2" style="margin-left: 75px; margin-top: 100px;">Buy Now</button>
+                   </div>
+                        </div>
+                        <div class="row" style="margin-top: 80px;">
+                            <div class="col-lg-3 col-md-3 col-sm-12" style="text-align: center;"><i class=""></i><span class="icons-2" style="font-family: kc; font-size: 25px; margin-left: 10px;">FREE SHIPPING</span></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12" style="text-align: center;"><i class=""></i><span class="icons-2" style="font-family: kc; font-size: 25px; margin-left: 10px;">FREE RETURNS</span></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12" style="text-align: center;"><i class=""></i><span class="icons-2" style="font-family: kc; font-size: 22px; margin-left: 10px;">SECURE SHOPPING</span></div>
+                            <div class="col-lg-3 col-md-3 col-sm-12" style="text-align: center;"><i class=""></i><span class="icons-2" style="font-family: kc; font-size: 22px; margin-left: 10px;">10000 STYLES</span></div>
+                        </div>
+                
+         
+        
+        </div>
+        </div>
+        
+            </div>
+            </div>
+            </section>
+            <footer class="footer-section">
+    
+
+            </footer>
+        
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script src="products.js"></script>
+<script>
+    // var uname = localStorage.getItem('username');
+    var myurl = window.location.href;
+    var url = new URL(myurl);
+    var myid = url.searchParams.get('id');
+    // document.getElementById('uname').innerHTML=uname;
+    for(i=0;i<products.length;i++){
+       
+        if(products[i].id == myid){
+            
+            document.getElementById('img1').src=products[i].image;
+            document.getElementById('pname').innerHTML=products[i].name;
+            document.getElementById('price').innerHTML=products[i].Price;  
+            document.getElementById('desc').innerHTML=products[i].desc;   
+
+            // var plus =[];
+            // var plus2 = products[i].Price;
+
+            // plus[i] =plus2;
+            // document.getElementById('total').innerHTML=plus[i];
+            
+            
+        }
+    }
+</script>
+<script src="footer.js"></script>

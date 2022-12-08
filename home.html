@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/styling.css">
+
+  <style>
+    body {
+      padding: 0px;
+      margin: 0px;
+      overflow-x: hidden;
+
+    }
+
+    .container-fluid {
+      width: 100%;
+      padding: 0px;
+      margin: 0px;
+    }
+    header{
+      height: 50px;
+      width: 100%;
+      background-color: rgb(255, 255, 255);display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    @font-face {
+      font-family: kc;
+      src: url(fonts/KeepCalm-Medium.ttf);
+    }
+
+    @font-face {
+      font-family: lc;
+      src: url(fonts/Louis\ George\ Cafe.ttf);
+    }
+
+    #banner {
+      height: auto;
+      width: 100%;
+      background-color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+
+
+    }
+
+    #banner p,
+    h3,
+    #shop {
+      position: absolute;
+    }
+
+    #banner h3 {
+      font-size: 85px;
+
+    }
+
+    #banner img {
+      opacity: 0.4;
+    }
+
+    #banner p {
+      font-size: 20px;
+      letter-spacing: 5px;
+      text-align: center;
+      margin-top: 150px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .nav-item {
+      font-size: 16px;
+      margin-left: 10px;
+      font-weight: 800;
+      background-color: white;
+    }
+
+    .nav-link {
+      font-family: lc;
+      display: inline-block;
+      position: relative;
+    }
+
+
+    .nav-link::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color:
+        #000000;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
+
+    }
+
+    .nav-link:hover:before {
+
+      transform: scaleX(1);
+      transform-origin: bottom left;
+
+    }
+.dropdown-menu{
+
+  border-radius: 0px;
+  font-family: lc;
+  color: black;
+}
+.dropdown-item{
+  font-weight: 800;
+  color: black;
+
+}
+.dropdown-item:hover{
+
+background-color: black;
+color: white;
+transition: .5s;
+
+}
+    #shop {
+      margin-top: 280px;
+      border: none;
+      height: 40px;
+      width: 120px;
+      font-family: lc;
+      font-size: 15px;
+      font-weight: bolder;
+
+    }
+
+    #shop:hover {
+      color: white;
+      background-color: black;
+      transition: ease-in-out 0.2s;
+    }
+
+    #mymodal {
+      margin-top: 300px;
+    }
+
+    #sname {
+      border: none;
+      outline: none;
+      border-bottom: 1px solid rgb(19, 19, 19);
+      font-family: lc;
+    }
+
+    #p-cards {
+      display: flex;
+      justify-content: space-around;
+      background-color: rgb(255, 255, 255);
+      margin-top: 25px;
+    }
+
+
+
+    @media only screen and (max-width: 576px) {
+
+      #banner h3 {
+        font-size: 45px;
+      }
+
+      #banner p {
+        font-size: 10px;
+        margin-top: 85px;
+        letter-spacing: 2px;
+      }
+
+      #shop {
+        margin-top: 150px;
+      }
+
+      #uname {
+        display: none;
+      }
+      header{
+        display: none;
+      }
+      .navbar-brand{
+        margin: auto;
+      }
+      #button-sh{
+        margin-left: 180px;
+      }
+    }
+
+    .contactus {
+      position: relative;
+      width: 100%;
+      padding: 40px 100px;
+      font-family: kc;
+    }
+
+    .contactus input {
+
+      font-family: lc;
+    }
+
+    .contactus .title {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2cm;
+    }
+
+    .contactus .title h1 {
+      font-size: 70px;
+      -webkit-text-stroke-width: 2px;
+    }
+
+    .box {
+      position: relative;
+    }
+
+    .form {
+      grid-area: form;
+    }
+
+    .info {
+      grid-area: info;
+    }
+
+    .map {
+      grid-area: map;
+    }
+
+    .contact {
+      padding: 40px;
+      background: #fff;
+
+    }
+
+    .box {
+      position: relative;
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      grid-template-rows: 5fr 4fr;
+      grid-template-areas:
+        "form info"
+        "form map";
+      grid-gap: 20px;
+    }
+
+    .contact h3 {
+      color: #000;
+      font-weight: 500;
+      font-size: 1.4em;
+      margin-bottom: 10px;
+    }
+
+    /* form */
+    .formbox {
+      position: relative;
+      width: 100%;
+    }
+
+    .formbox .row50 {
+      display: flex;
+      gap: 20px;
+    }
+
+    .inputbox {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 10px;
+      width: 100%;
+      text-align: left;
+    }
+
+    .formbox .row100 .inputbox {
+      width: 100%;
+    }
+
+    .inputbox span {
+      color: black;
+      margin-top: 60px;
+      margin-bottom: 5px;
+      font-weight: 500;
+    }
+
+    .inputbox input {
+      padding: 10px;
+      font-size: 1.1em;
+      outline: none;
+      border: 1px solid #333;
+    }
+
+    .inputbox textarea {
+      padding: 10px;
+      font-size: 1.1em;
+      outline: none;
+      border: 1px solid #333;
+      resize: none;
+      min-height: 220px;
+      margin-bottom: 10px;
+    }
+
+    .inputbox input[type="submit"] {
+      color: black;
+      border: none;
+      font-size: 1.1em;
+      max-width: 120px;
+      font-weight: 500;
+      cursor: pointer;
+      padding: 14px 15px;
+    }
+
+    /* info */
+    .info {
+      background: #fff;
+    }
+
+    .info h3 {
+      color: black;
+    }
+
+    .info .infobox div {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+
+    .info .infobox div span {
+      min-width: 40px;
+      height: 40px;
+      color: black;
+      background-color: rgb(255, 174, 0);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.5em;
+      border-radius: 50%;
+      margin-right: 15px;
+    }
+
+    .info .infobox div p {
+      color: black;
+    }
+
+    .info .infobox div a {
+      color: black;
+      text-decoration: none;
+      font-size: 1.1em;
+    }
+
+    .sci {
+      margin-top: 40px;
+      display: flex;
+    }
+
+    .sci li {
+      list-style: none;
+      margin-right: 15px;
+    }
+
+    .sci li a {
+      font-size: 2em;
+      color: black;
+    }
+
+    .map {
+      padding: 0;
+    }
+
+    .map iframe {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* responsive design */
+    @media (max-width: 991px) {
+
+      /* body{
+        background: rgb(255, 174, 0);
+    } */
+      .contactus {
+        padding: 20px;
+      }
+
+      .box {
+        position: relative;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+        grid-template-areas:
+          "form"
+          "info"
+          "map";
+      }
+
+      .formbox .row50 {
+        display: flex;
+        gap: 0;
+        flex-direction: column;
+      }
+
+      #text-area {
+        width: 100%;
+        height: 40px;
+
+      }
+
+      .contact {
+        padding: 30px;
+      }
+
+      .map {
+        min-height: 300px;
+        padding: 0;
+      }
+    }
+
+    .input {
+      outline: none;
+    }
+
+    .btn-1 {
+      height: 40px;
+      width: 100%;
+      background-color: black;
+      color: white;
+      border: none;
+      margin-top: 40px;
+    }
+
+    .btn-1:hover {
+
+      background-color: grey;
+      color: #fff;
+      transition: 1s;
+
+
+
+    }
+
+    .heading-1 {
+      height: 100%;
+      width: 100%;
+      margin-top: 50px;
+    }
+
+    .head {
+      text-align: center;
+      font-family: kc;
+      font-weight: bolder;
+    }
+
+    #selectors {
+
+      margin-top: 30px;
+    }
+
+    #question {
+      margin-top: 40px;
+      font-family: kc;
+    }
+
+    #ques1 {
+      margin-top: 10px;
+      font-family: kc;
+      text-align: center;
+    }
+
+    #check {
+      margin-top: 10px;
+      font-family: kc;
+
+    }
+
+    #opt {
+      font-family: kc;
+      margin-top: 20px;
+    }
+
+    label {
+      margin-top: 5px;
+      font-size: 15px;
+      font-family: kc;
+    }
+
+    .btn1 {
+      height: 40px;
+      width: 400px;
+      background-color: black;
+      color: white;
+      border: none;
+      margin-top: 40px;
+      font-family: kc;
+
+    }
+
+    .btn1:hover {
+
+      background-color: grey;
+      color: #fff;
+      transition: 1s;
+    }
+
+    #ques2 {
+      margin-top: 20px;
+      font-family: kc;
+    }
+
+    .box {
+      width: 90%;
+      outline: none;
+      border: none;
+      border-radius: 0px;
+      text-align: center;
+      font-family: kc;
+      border-bottom: 1px solid black;
+    }
+    .abt{
+    text-align: center;
+    margin-bottom: 60px;
+    margin-top: 40px;
+}
+.abt-p h1{
+  text-align: center;
+  font-family: lc;
+  margin-top: 20px;
+  text-align: center;
+}
+.abt-p p{
+  text-align: center;
+  font-family: lc;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 40px;
+}
+/* footer starts */
+ul {
+  margin: 0px;
+  padding: 0px;
+}
+
+.footer-section {
+  background: #151414;
+  position: relative;
+  font-family: kc;
+  background-color: white;
+}
+
+.footer-cta {
+  border-top: 2px solid #000000;
+  border-bottom: 2px solid #000000;
+  font-family: kc;
+}
+
+.single-cta i {
+  color:  rgb(255, 174, 0);
+  font-size: 30px;
+  float: left;
+  margin-top: 8px;
+  margin-left: 30px;
+}
+
+.cta-text {
+
+  display: inline-block;
+  margin-left: 30px;
+}
+
+.cta-text h4 {
+ 
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 2px;
+  font-family: kc;
+  color: black;
+}
+
+.cta-text span {
+  color: #757575;
+  font-size: 13px;
+  color: #000;
+}
+
+.footer-content {
+  position: relative;
+  z-index: 2;
+}
+
+.footer-pattern img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 330px;
+  background-size: cover;
+  background-position: 100% 100%;
+}
+
+.footer-logo {
+  margin-bottom: 30px;
+  font-size: 40px;
+  font-weight: 500;
+  color: white;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.footer-logo img {
+  height: 50px;
+    max-width: 330px;
+    margin-left: 66px;
+}
+
+.footer-text p {
+  margin-bottom: 14px;
+  font-size: 14px;
+  color: #7e7e7e;
+  line-height: 28px;
+}
+
+.footer-social-icon span {
+  color: black;
+  display: block;
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  margin-left: 30px;
+  text-align: center;
+  font-family: kc;
+}
+
+.footer-social-icon a {
+  color: #fff;
+  font-size: 16px;
+  margin-right: 15px;
+}
+
+.footer-social-icon i {
+  height: 40px;
+  width: 40px;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  margin-left: 65px;
+}
+
+.facebook-bg {
+  background: #3B5998;
+}
+
+.twitter-bg {
+  background: #55ACEE;
+}
+
+.google-bg {
+  background: #DD4B39;
+}
+
+.footer-widget-heading h3 {
+  color: black;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  position: relative;
+}
+
+.footer-widget-heading h3::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -15px;
+  height: 2px;
+  width: 50px;
+  background:  rgb(241, 187, 69);
+}
+
+.footer-widget ul li {
+  display: inline-block;
+  width: 50%;
+  margin-bottom: 12px;
+}
+
+.footer-widget ul li a:hover {
+  color:  rgb(255, 174, 0) ;
+}
+
+.footer-widget ul li a {
+  color: #878787;
+  text-transform: capitalize;
+  line-height: 35px;
+}
+
+.subscribe-form {
+  position: relative;
+  overflow: hidden;
+}
+
+.subscribe-form input {
+  width: 100%;
+  padding: 14px 28px;
+  border:none;
+  color: black;
+  outline: none;
+  border-bottom: 2px solid black;
+}
+
+.subscribe-form button {
+  position: absolute;
+  right: 0;
+  color:  rgb(0, 0, 0);
+  padding: 13px 20px;
+  border: none;
+  border-bottom: 2px solid black;
+  top: 0;
+}
+
+.subscribe-form button i {
+  color: rgb(0, 0, 0);
+  font-size: 22px;
+  transform: rotate(-6deg);
+}
+
+.copyright-area {
+  text-align: center;
+  background: #ffffff;
+}
+
+.copyright-text p {
+  text-align: center;
+  margin-left:70px;
+  font-size: 15px;
+  color: #000000;
+  font-family: lc;
+}
+
+.copyright-text p a {
+  text-align: center;
+  color:white;
+ 
+}
+
+.footer-menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.footer-menu li:hover a {
+  color:white;
+}
+
+.footer-menu li a {
+  font-size: 14px;
+  color: white;
+}
+
+/* footer ends */
+  </style>
+</head>
+
+<body>
+  <div class="modal" tabindex="-1" role="dialog" id="mymodal">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title">Welcome!</h5>
+        </div>
+        <div class="modal-body">
+          <input type="text" id="sname" placeholder="Enter Your Name">
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-dark" id="btn">Submit</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid">
+    <header><span style="color: black;font-family: lc;font-weight: bolder;">Vistiors : </span><span id="coonter" style="color: black;font-family: lc;font-size: 17px;"></span><strong id="uname" style="font-size: 20px;font-family: lc;color: black; margin-left: 85%;"></strong>
+      <div
+        style="height: 35px;width: 35px;margin-top: 5px;margin-left: 10px; border: 1px solid black;
+      text-align: center;background-color: black;border-radius: 20px;display: flex;justify-content: center;align-items: center;">
+        <i class="fa-solid fa-user" style="font-size: 20px;color: white;"></i>
+      </div></header>
+    <nav class="navbar navbar-expand-lg" style="background-color: white;">
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <a class="navbar-brand" href="#" style="font-family: kc;">
+        <img src="texhwizimages/thrift.png" alt="">
+      </a>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav" style="margin-left: 130px;">
+          <li class="nav-item active">
+            <a style="color: black;" class="nav-link mx-3" href="home.html">Home <span class="sr-only">(current)</span></a>
+          </li>
+
+          <li class="nav-item dropdown  mx-3">
+            <a style="color: black;" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+              data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Products
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <a class="dropdown-item" href="category.html?cat=Men">Men</a>
+              <a class="dropdown-item" href="category.html?cat=Women">Women</a>
+
+            </div>
+          </li>
+          <li class="nav-item  mx-3">
+            <a style="color: black;" class="nav-link" href="#cont-us">Contact Us</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a style="color: black;" class="nav-link" href="#abt1">About Us</a>
+          </li>
+          <li class="nav-item mx-3">
+            <a style="color: black;" class="nav-link" href="#head1">Feedback</a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      
+    </nav>
+    <div id="banner">
+
+      <h3 style="position: absolute;font-family: kc;color: white;">Time To Party</h3>
+      <p class="text-light p-banner">New Colors,now also available in men's sizing</p>
+
+      <img src="texhwizimages/fashion-banner-1 (1).jpg" height="700px" width="50%" class="img-fluid">
+
+
+      <img src="texhwizimages/fashion-banner-2.jpg" height="700px" width="50%" class="img-fluid">
+      <button id="shop">Shop Now</button>
+    </div>
+
+  </div>
+
+  <div class='container-fluid'>
+    <div id="p-cards">
+      <div class="row">
+        <div class="col-lg-4 col-md-6 col-sm-12 container1">
+          <img src="texhwizimages/pexels-ali-mnttzri-5895480.jpg" class="image" height='500px' width='100%'
+            style="padding: 0px;">
+          <div class="middle">
+            <div class="text1">Shoes</div>
+            <div class="text2"><a href="category.html?cat=shoes">Shop Now</a></div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 container1">
+          <img src="texhwizimages/pexels-dima-valkov-6211618.jpg" class="image" height='500px' width='100%'
+            style="padding: 0px;">
+          <div class="middle">
+            <div class="text1">Bags</div>
+            <div class="text2"><a href="category.html?cat=Bags">Shop Now</a></div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 col-sm-12 container1">
+          <img src="texhwizimages/pexels-keen-9286995.jpg" class="image" height='500px' width='100%'
+            style="padding: 0px;">
+          <div class="middle">
+            <div class="text1">Jackets</div>
+            <div class="text2"><a href="category.html?cat=Jacket">Shop Now</a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section class="container-fluid">
+    <div class="row" style="margin-top: 25px;">
+      <div class="col-lg-3 col-md-6 col-sm-12 container" style="cursor: pointer;">
+        <img src="images/shoes1.png" alt="Avatar" class="image" style="width:100%">
+        <div class="middle">
+          <div class="text"><a href="product 1.html">Shop Now</a></div>
+        </div>
+
+      </div>
+
+      <div class="col-lg-6 col-md-6 col-sm-12">
+        <h1 id="img-text">Feature Products</h1>
+        <p id="img-para">Appear, dry there darkness they're seas waters thing.
+          Beast, above fly brought.</p>
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12 container" style="cursor: pointer;">
+        <img src="images/shoes_1.jpg" alt="Avatar" class="image" style="width:100%">
+        <div class="middle">
+          <div class="text"><a href="product 2 - Copy.html">Shop Now</a></div>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-3 col-md-6 col-sm-12 container" style="cursor: pointer;">
+        <img src="images/lv.jpeg" alt="Avatar" class="image" style="width:100%">
+        <div class="middle">
+          <div class="text"><a href="product 3 - Copy.html">Shop Now</a></div>
+        </div>
+
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12 container" style="cursor: pointer;">
+        <img src="images/menshirt1.jpg" alt="Avatar" class="image" style="width:100%">
+        <div class="middle">
+          <div class="text"><a href="product 4 - Copy.html">Shop Now</a></div>
+        </div>
+
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12 container" style="cursor: pointer;">
+        <img src="images/womenshirt1.jpg" alt="Avatar" class="image" style="width:100%">
+        <div class="middle">
+          <div class="text"><a href="product 5 - Copy.html">Shop Now</a></div>
+        </div>
+
+      </div>
+      <div class="col-lg-3 col-md-6 col-sm-12 container" style="cursor: pointer;">
+        <img src="images/mensupper1.jpg" alt="Avatar" class="image" style="width:100%">
+        <div class="middle">
+          <div class="text"><a href="product 6- Copy - Copy.html">Shop Now</a></div>
+        </div>
+
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-6 col-sm-12 gap-rem" style="cursor: pointer;">
+        <div data-aos="zoom-out" data-aos-duration="2000">
+          <img src="images/pexels-vitória-santos-2825578.jpg" alt="" height="1010px" width="100%"
+            style="object-fit: cover;">
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 gap-rem" style="cursor: pointer;">
+
+        <h1 id="new-coll"> New 2022 Mens <br> Hoodie Collection</h1>
+        <button id="button-sh" ><a href="category.html?cat=Men" style="text-decoration: none; color: red;"> Shop Now<i class="fa-solid fa-arrow-right"></i></a> </button>
+        <div data-aos="fade-up" data-aos-duration="2000">
+
+          <img src="images/womenpurse1.jpg" alt="" height="500px" width="100%" style="object-fit:cover ;"
+            id="women-pur">
+        </div>
+      </div>
+
+    </div>
+    <div class="row">
+
+      <div class="col-lg-6 col-md-6 col-sm-12 gap-rem" style="cursor: pointer;">
+        <div data-aos="zoom-in-up" data-aos-duration="2000">
+
+          <img src="images/womenfashion1.jpg" alt="" height="300px" width="100%" style="object-fit: cover;">
+
+        </div>
+      </div>
+      <div class="col-lg-6 col-md-6 col-sm-12 gap-rem" style="cursor: pointer;">
+        <div data-aos="zoom-in-up" data-aos-duration="2000">
+          <img src="texhwizimages/pexels-piccinng-2272752.jpg" alt="" height="300px" width="100%"
+            style="object-fit: cover;">
+        </div>
+      </div>
+
+
+
+    </div>
+
+  </section>
+  <section>
+    <div class="contactus" id="cont-us">
+      <div class="title">
+        <h1 style="color: #000; font-family: kc; font-size: 45px;">Get In Touch</h1>
+      </div>
+      <div class="row">
+        <div class="col-lg-7 col-md-7 col-sm-12 box">
+          <!-- form -->
+          <div class="contact form">
+            <h3 style="margin-left: 150px;">Send a Message</h3>
+            <form action="">
+              <div class="formbox">
+                <div class="row50">
+                  <div class="inputbox">
+                    <span> Name</span>
+                    <h2 id="uuname"></h2>
+                  </div>
+
+                </div>
+
+                <div class="row50">
+                  <div class="inputbox">
+                    <span>Email</span>
+                    <input type="text" id="email" placeholder="Enter Your Email"
+                      style="border-top: 1px black; border-left: none; border-right: none;">
+                  </div>
+                  <div class="inputbox">
+                    <span>Mobile</span>
+                    <input type="text" id="phone" placeholder="Enter Mobile Number"
+                      style="border-top: 1px black; border-left: none; border-right: none;">
+                  </div>
+                </div>
+
+                <div class="row100">
+                  <div class="inputbox">
+                    <span>Message</span>
+                    <input id="text-area" placeholder="Write Your Message Here...."
+                      style="border-top: 1px black; border-left: none; border-right: none; height:'10px' ">
+                  </div>
+                </div>
+
+                <div class="row100">
+                  <div class="inputbox">
+                    <button type="button" onclick="validation()" class="btn-1">Submit</button>
+                  </div>
+                </div>
+              </div>
+            </form>
+
+
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-5 col-sm-12 contact map">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d23968.510457903234!2d-74.3713075715693!3d41.329225849832994!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2d704a4ffc313%3A0x6fecca0e85d29209!2sFlorida%2C%20NY%2C%20USA!5e0!3m2!1sen!2s!4v1652903807654!5m2!1sen!2s"
+            width="600" height="430" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+  <div class="container-fluid">
+    <section class="heading-1">
+      <div class="row">
+        <div class="col-12">
+          <div class="head" id="head1">
+
+            <h1>Feedback</h1>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="selectors">
+      <div class="row">
+        <div class="col-lg-6 col-md-6 col-sm-12 " id="ques1">
+          <h4>How was your experience?<span style="color: red;">*</span></h4>
+        </div>
+    
+        <div class="col-lg-2 col-md-6 col-sm-12 " id="ques1">
+          <input type="radio" id="check" name="check1">
+          <label for="check">Good</label>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-12 " id="ques1">
+          <input type="radio" name="check1" id="check">
+          <label for="check">Fair</label>
+        </div>
+        <div class="col-lg-2 col-md-6 col-sm-12 " id="ques1">
+          <input type="radio" name="check1" id="check">
+          <label for="check">Poor</label>
+        </div>
+
+
+      </div>
+      <div class="row" id="question">
+        <div class="col-lg-6 col-md-6 col-sm-12 " id="ques1">
+          <h4>Tell Us Your Opinion?<span style="color: red;">*</span></h4>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-12 ">
+        <input type="text" class="box" placeholder="Message">
+      </div>
+      </div>
+ 
+  </section>
+
+
+
+  <center>
+    <button class="btn1 " type="button" onclick='swal("Thank you!", "For your Feedback!", "success");'>Submit</button>
+  </center>
+
+</div>
+<div class="container abt" id="abt1">
+  <h1 style="font-family: kc;">OUR <span style="color: rgb(129, 118, 118);font-family: kc;"> TEAM</span></h1>
+  </div>
+
+  
+  <div class="jumbotron container-fluid">
+      <div class="img-layer-container-fluid">
+          <div class="team-image" id="team-image" style="height: 500px; width: 100%; background-color: white;">
+              <img class="img-fluid" src="texhwizimages/abt1.png" alt="" style="margin-left: 70px;">
+          </div>
+
+
+      </div>
+  </div>
+  <div class="container-fluid abt-p">
+      <div>
+          <h1 style="font-family: kc;">OUR MOTIVE</h1>
+      </div>
+      <p> Our code generation engine enables API providers to generate SDKs for their APIs within minutes and at a fraction of the cost. We provide tools like our API editor and API transformer to further aid API providers in minimizing the time required to ship excellent quality SDKs to the developers using their APIs. Our code generation engine is also capable of generating succinct and error-free documentation for APIs and SDKs, both. The documentation for the SDKs includes dynamic screenshots detailing usage instructions tailored to the provider's specific API and also code snippets showing example usage. As the cherry on the cake, we provide beautifully designed DX portals to encapsulate this documentation.
+      </p>
+      <p> Our code generation engine is also capable of generating succinct and error-free documentation for APIs and SDKs, both. The documentation for the SDKs includes dynamic screenshots detailing usage instructions tailored to the provider's specific API and also code snippets showing example usage. As the cherry on the cake, we provide beautifully designed DX portals to encapsulate this documentation.</p>
+  </div>
+  <footer class="footer-section">
+    
+
+  </footer>
+</body>
+
+</html>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+<script src="products.js"></script>
+<script>
+  var js_counter = 1;
+  if (localStorage.getItem('js_counter')) {
+      js_counter = localStorage.getItem('js_counter');
+      js_counter++;
+      localStorage.setItem('js_counter', js_counter);
+
+  } else {
+      localStorage.setItem('js_counter', js_counter);
+  }
+  document.getElementById('coonter').innerHTML = js_counter;
+</script>
+<script>
+  $(document).ready(function () {
+    if (localStorage.getItem('username') == null) {
+      $('#mymodal').show();
+    }
+
+    $('#btn').click(function () {
+      var uname = $('#sname').val();
+      if (uname == "") {
+        $('#mymodal').show();
+      }
+      else {
+        localStorage.setItem('username', uname);
+        var gname = localStorage.getItem('username');
+        document.getElementById('uname').innerHTML = gname;
+        $('#mymodal').hide();
+      }
+    })
+    var gname = localStorage.getItem('username');
+    document.getElementById('uname').innerHTML = gname;
+    document.getElementById('uuname').innerHTML = gname;
+  })
+
+  for (i = 0; i < 3; i++) {
+    document.getElementById('p-cards').innerHTML += `
+   
+  `
+  } 
+</script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+<!-- contact us section ends -->
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+<!-- JavaScript Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+<script>
+
+
+  function validation() {
+    var name_regax = /^[a-zA-Z]{3,20}$/;
+    var email_regax = /^[a-zA-Z0-9-_.]+@[a-zA-Z]+\.[a-zA-Z]{3,20}$/;
+    var phone_regax = /^[+92]+[0-9]{10}$/;
+
+
+    var uname = document.getElementById('uname').value;
+    var phone = document.getElementById('phone').value;
+    var email = document.getElementById('email').value;
+
+    if (!name_regax.test(uname)) {
+      alert("Invalid User Name")
+    }
+
+    if (!email_regax.test(email)) {
+      alert("Invalid Email Address")
+    }
+    if (!phone_regax.test(phone)) {
+      alert("Invalid Phone Number")
+    }
+
+  }
+
+</script>
+<!-- <script src="footer.js"></script> -->

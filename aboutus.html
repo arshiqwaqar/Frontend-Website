@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <title>Document</title>
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Dosis:wght@200;400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Dosis", sans-serif;
+  background-color: var(--clr-salmon);
+}
+
+.section-log-in {
+  padding: 50px 0;
+}
+
+.section-log-in .container {
+  padding: 0 15px;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
+.section-log-in .choices-container {
+  text-align: center;
+  width: 100%;
+  position: relative;
+}
+
+.section-log-in .choices {
+  background-color: #222;
+  border-radius: 5px;
+  padding: 3rem 0;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.section-log-in .choice {
+  padding: 0 1rem;
+  flex: 1;
+}
+.section-log-in .choice .text {
+  color: #eee;
+  margin-bottom: 25px;
+}
+.section-log-in .choice .btn {
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  font-family: "Dosis", sans-serif;
+  font-weight: 700;
+  border: 2px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  border-radius: 3px;
+  min-width: 100px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.15s linear;
+}
+.section-log-in .choice .btn:hover {
+  background-color: #fff;
+  color: #333;
+}
+
+.section-log-in .forms-container {
+  position: absolute;
+  min-height: 140%;
+  width: calc(50% - 2rem);
+  background-color: #fff;
+  border-radius: 5px;
+  top: 50%;
+  transform: translateY(-50%) translateX(calc(0px + 1rem));
+  transition: all 0.3s linear;
+  overflow: hidden;
+
+  /* display: grid; */
+  /* grid-template-columns: 100% 100%; */
+}
+
+.section-log-in .choices-container.login-step .forms-container {
+  transform: translateY(-50%) translateX(calc(100% + 3rem));
+}
+
+.section-log-in .forms-container .form {
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.section-log-in .forms-container .form-sign-up,
+.section-log-in .choices-container.login-step .forms-container .form-login {
+  display: flex;
+}
+.section-log-in .choices-container.login-step .forms-container .form-sign-up,
+.section-log-in .forms-container .form-login {
+  display: none;
+}
+
+.section-log-in .forms-container .form .text-form {
+  text-transform: uppercase;
+  font-size: 28px;
+  color: var(--clr-salmon);
+  margin-bottom: 1.5rem;
+}
+.section-log-in .forms-container .form input {
+  font-size: 15px;
+  font-family: "Dosis", sans-serif;
+  margin-bottom: 12px;
+  padding: 0.4rem 0.3rem;
+  outline: none;
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-color: transparent transparent #777 transparent;
+  transition: box-shadow 0.15s linear;
+}
+.section-log-in .forms-container .form input:focus {
+  box-shadow: 0 8px 16px -10px rgba(0, 0, 0, 0.2);
+}
+.section-log-in .forms-container .form .btn {
+  padding: 0.4rem 0.3rem;
+  font-family: "Dosis", sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  min-width: 120px;
+  align-self: end;
+  margin-top: 15px;
+  cursor: pointer;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: var(--clr-salmon);
+  border: 1px solid var(--clr-salmon);
+  border-radius: 3px;
+  box-shadow: 0 5px 15px -4px rgba(0, 0, 0, 0.2);
+  transition: all 0.2s linear;
+}
+.section-log-in .forms-container .form .btn:hover {
+  box-shadow: none;
+  color: var(--clr-salmon);
+  background-color: transparent;
+}
+
+@media only screen and (max-width: 350px) {
+  .section-log-in .forms-container {
+    position: static;
+    transform: initial !important;
+    transition: none !important;
+  }
+
+  .section-log-in .choices {
+    padding-bottom: 80px;
+  }
+
+  .section-log-in .forms-container {
+    width: 90%;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%, -25px) !important;
+  }
+}
+
+</style>
+<body>
+
+
+<!-- 2-divs-start -->
+<section class="section-log-in">
+    <div class="container">
+  
+      <div class="choices-container"  id="choices-container">
+        <div class="choices">
+          <div style="margin-left: 510px; padding:20px">
+          <p class="text-white" style="font: size 100px ;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Excepturi et ad minus debitis minima maxime molestiae illo fugit, magnam eveniet numquam natus beatae autem deleniti laborum aspernatur, nobis magni quos incidunt obcaecati maiores? Eius atque deleniti laudantium animi, in laborum esse harum dolorem totam dicta aliquid incidunt, similique ducimus hic nam, molestiae temporibus praesentium expedita a ullam est? Non facere eligendi tempore illo ut fugit assumenda quos, recusandae a sequi ratione inventore, corrupti, distinctio quisquam amet! Voluptatibus, in, harum id nihil unde dolores adipisci ex pariatur, ullam accusantium magnam voluptatem deserunt rerum voluptates suscipit fugit laudantium nostrum exercitationem tempore eligendi.</p>
+        </div>
+        </div>
+  
+        <div class="forms-container">
+          <img src="img/pexels-thức-lê-hữu-1390600.jpg" alt="">
+        </div>
+      </div>
+  
+    </div>
+  </section>
+
+
+
+
+
+
+
+
+
+
+
+    <!-- subscribecard -->
+  <!-- Background Container -->
+  <div class="flex items-center justify-center h-screen">
+    <!-- Card -->
+    <div class="bg-zinc-800 p-2 mx-6">
+      <!-- flex container -->
+      <div class="flex flex-col md:flex-row rounded-l-xl">
+        <!-- Image -->
+        <img src="https://i.postimg.cc/sftgDR9b/image.jpg" class="h-80 object-fit rounded-xl md:h-64 md:rounded-l-xl md:rounded-r-none transform hover:scale-105 hover:rounded-xl duration-200" alt="Subscribe to get Email">
+        <!-- content -->
+        <div class="p-6 md:p-12">
+          <h1 class="font-serif text-xl font-medium text-center text-white md:text-left">Newsletter Update</h1>
+          <p class="max-w-xs my-4 text-xs.leading-5.tracking-wide text-center text-white md:text-left">Subscribe to receive emailson new product arivals & special offer</p>
+
+          <div class="flex flex-col mt-5 space-y-4 md:space-x-3 md:flex-row md:space-y-0">
+            <input type="text" placeholder="Enter your email address" class="p-2 px-4 text-center text-white bg-zinc-800 border border-zinc-600 placeholder:text-xs placeholder:text-center placeholder:md:text-left md:text-left focus:outline-none">
+
+            <button class="px-5 py-3 text-xs rounded-md text-zinc-800 bg-lime-500 hover:bg-lime-700 hover:text-white duration-500">Subscribe Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+<script>
+import * as tailwindcss from "https://cdn.skypack.dev/tailwindcss@3.1.7";
+</script>
+
+<script>
+    const choicesElmCont = document.getElementById("choices-container");
+const btnSignUp = document.getElementById("btn-sign-up");
+const btnLogin = document.getElementById("btn-login");
+
+btnSignUp.addEventListener("click", function () {
+  choicesElmCont.classList.remove("login-step");
+});
+
+btnLogin.addEventListener("click", function () {
+  choicesElmCont.classList.add("login-step");
+});
+
+</script>
+
