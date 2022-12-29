@@ -1,0 +1,75 @@
+@font-face {
+    font-family: kc;
+    src: url(KeepCalm-Medium.ttf);
+}
+
+.heading-1{
+    height: 100%;
+    width: 100%;
+    margin-top: 50px;
+}
+.head{
+    text-align: center;
+font-family: kc;
+font-weight: bolder;
+}
+
+
+#selectors{
+   
+    margin-top: 30px;
+}
+#question{
+    margin-top: 40px;
+    font-family: kc;
+}
+#ques1{
+  margin-top: 10px;
+  font-family: kc;
+  text-align: center;
+}
+.box{
+    margin-top: 20px;
+    outline: none;
+    height: 50px;
+    width: 100%;
+    border: none;
+    border-radius: 0px;
+    text-align: left;
+    font-family: kc;
+border-bottom: 1px solid black;
+}
+#ques2{
+    margin-top: 20px;
+    font-family: kc;
+}
+#check{
+    margin-top: 10px;
+    font-family: kc;
+    
+}
+#opt{
+    font-family: kc;
+    margin-top: 20px;
+}
+label{
+    margin-top: 5px;
+    font-size: 15px;
+    font-family: kc;
+}
+.btn1{
+    height: 70px;
+    width:150px;
+   background-color: pink;
+    margin-top: 30px;
+    border-radius: none;
+    font-family: kc;
+    font-size: 20px;
+
+}
+.btn1:hover{
+    border: none;
+color: white;
+    background-color: rgb(83, 120, 94);
+transition: 1s;
+}
